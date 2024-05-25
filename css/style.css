@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300..800&display=swap');
+@font-face {
+  font-family: "nordic";
+  src: url(../fonts/nordic-font.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+  html {
+    font-size: 62,5%; /* 62,5% */
+  }
+
+  /* ------------------Main code------------------------------------- */
+
+  :root {
+    --bcg-color-main: #fdf5f0;
+    --text-color-main: #1d0d04;
+    --text-color-secondary: #5d57e8;
+    --primary-color: #e36c2e;
+    --secondary-color: #80e0ee;
+    --accent-color: #5d57e8;
+    --left-side-container-width: 35vw;
+    --right-side-height-information: 22vh;
+  }
+
+
+
+.open-sans-normal {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+.open-sans-italic {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+* {
+    font-family: "Open Sans", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+    
+}
+
+
+main {
+    width:100vw; height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#left-side-container {
+  width: var(--left-side-container-width);
+  background-color: #80e0ee;
+  background-image: url("../img/left-side-bcg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  box-shadow: inset .2rem .2rem 1rem 0 rgba(0,0,0,50%);
+}
+
+#left-side-container>div {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+#left-side-container>div.logo-container {
+  height: 25vh; 
+  top: 12.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#left-side-container>div.logo-container>img {
+  height: 100%;
+  width: auto;
+}
+
+#left-side-container .logo-container .logo-bcg,
+#left-side-container>.img-credit-container .credit-bcg {
+  width: 100%; height: 100%;
+  position: absolute;
+  background-color: var(--text-color-main);
+  opacity: 60%;
+  z-index: 0;
+}
+
+#left-side-container div>h1,
+#left-side-container div>p {
+  position: relative;
+  text-align: center;
+  color: var(--bcg-color-main);
+  z-index: 1;
+}
+
+#left-side-container h1 {
+  font-family: "nordic", system-ui;
+  font-size: max(3rem, calc(0.75rem + 1.5vh));
+  letter-spacing: 0.3rem;
+}
+
+#left-side-container div>p {
+  position: relative;
+  padding: 2rem;
+}
+
+#left-side-container div>img {
+  z-index: 1;
+}
+
+#left-side-container>.img-credit-container {
+  top: 60vh;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#left-side-container .img-credit-container :is(a, a:visited) {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+#left-side-container .img-credit-container a::after {
+  
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="currentColor"><path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z"/></svg> ');
+  display: inline-block;
+  position: relative;
+}
+
+#left-side-container .img-credit-container a:hover {
+  color: var(--primary-color)
+}
+
+
+#right-side-container {
+  width: calc(100vw - var(--left-side-container-width));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #42FCB9;
+}
+
+
+#right-side-container .form-information {
+  width: 100%;
+  padding: 0 5%;
+  height: var(--right-side-height-information);
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#right-side-container .form-information>p {
+  text-align: left;
+}
+
+#right-side-container .information {
+  font-size: 1.3rem;
+  margin-bottom: .7rem;
+}
+
+#right-side-container>div.form {
+  width: 100%;
+  height: calc(100vh - var(--right-side-height-information));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#right-side-container div .form-container,
+#right-side-container div .button-container,
+#right-side-container div.form p {
+  padding: 0 5%;
+}
+
+
+#right-side-container div .form-container {
+  background-color: var(--bcg-color-main);
+  border-radius: .7rem;
+  box-shadow: .1rem .3rem 1rem 0rem rgba(0,0,0,50%);
+  margin-bottom: 1.5rem;
+}
+
+#right-side-container .form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#right-side-container ul>li {
+  width: 40%;
+  margin-right: 10%;
+}
+
+#right-side-container ul>li>* {
+  display: block;
+}
+
+#right-side-container .form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+#right-side-container ul>li>input {
+  width: 60%; 
+  border: .1rem solid black;
+  border-radius: .3rem;
+  margin-bottom: 2rem;
+}
+
+#right-side-container ul>li>input:focus-visible {
+  border: .1rem solid red;
+  box-shadow: .1rem .3rem 1rem 0 rgba(0,0,0,30%);
+}
+
+#right-side-container .form .button-container button {
+  width: 12%;
+  padding: .3rem .3rem;
+  background-color: var(--primary-color);
+  border: .1rem solid var(--primary-color);
+  border-radius: .4rem;
+  color: var(--bcg-color-main);
+  box-shadow: .1rem .3rem 1rem 0rem rgba(0,0,0,50%);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
