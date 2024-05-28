@@ -20,7 +20,7 @@
             <div class="img-credit-container">
                 <div class="credit-bcg"></div>
                 <p>
-                    Photo de <a href="https://unsplash.com/fr/@piensaenpixel?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Emilio Garcia</a> sur <a href="https://unsplash.com/fr/photos/une-vue-aerienne-dun-plan-deau-qEfcXtAoMt8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                    Photo de <a href="https://unsplash.com/fr/@lifeof_peter_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Peter Thomas</a> sur <a href="https://unsplash.com/fr/photos/un-paysage-desertique-avec-des-dunes-de-sable-et-des-arbres-au-loin-GoN5enlXfBU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
                 </p>
             </div>
         </div>
@@ -42,33 +42,38 @@
                                     <label for="first-name">FIRST NAME
                                         <span>*</span>
                                     </label>
-                                    <input type="text" id="first-name">
+                                    <input type="text" id="first-name" required>
+                                    <p data-help="Surely you got a name, huh ?"> </p>
                                 </li>
                                 <li>
                                     <label for="last-name">LAST NAME
                                         <span>*</span>
                                     </label>
-                                    <input type="text" id="last-name"></li>
+                                    <input type="text" id="last-name" required></li>
+                                    <p data-help="Don't you have a last name ?"> </p>
                                 <li>
                                     <label for="user-mail">EMAIL
                                         <span>*</span>
                                     </label>
-                                    <input type="email" id="user-mail">
+                                    <input type="email" id="user-mail" required>
+                                    <p data-help="Valid format : you@example.com"> </p>
                                 </li>
                                 <li><label for="user-phone">PHONE NUMBER</label>
-                                    <input type="text">
+                                    <input type="text" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$">
                                 </li>
                                 <li>
                                     <label for="psw">PASSWORD
                                         <span>*</span>
                                     </label>
-                                    <input type="password" id="psw">
+                                    <input type="password" id="psw" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                                    <p data-help="8 characters, includes at least : 1 number, and 1 special character"> </p>
                                 </li>
                                 <li>
                                     <label for="psw-confirmation">CONFIRM PASSWORD
                                         <span>*</span>
                                     </label>
-                                    <input type="password"></input>
+                                    <input type="password" id="psw-confirmation" required></input>
+                                    <p data-help="password confirmation" class="psw-error"></p>
                                 </li>
                             </ul>
                         </fieldset>
@@ -77,7 +82,7 @@
                         <button type="submit">Create Account</button>
                     </div>
                 </form>
-                <p>Already have an account? <a href="#">Log in</a></p>
+                <p>Already have an account? <a href="pages/log-in.html">Log in</a></p>
             </div>
         </div>
 
